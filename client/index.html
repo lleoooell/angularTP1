@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<title>angular</title>
+		<link rel="stylesheet" type="text/css" href="/assets/css/style.css">
+		<base href="/">
+		<!-- <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.4/socket.io.js"></script> -->
+	</head>
+
+	<body ng-app="moduletest" >
+
+
+		   
+
+		 <a ui-sref="eleves" ui-sref-active="active">Eleves</a>
+   		 <a ui-sref="about" ui-sref-active="active">About</a>
+   		 <a ui-sref="currency" ui-sref-active="active">Currency</a>
+		 
+		 <ui-view></ui-view>
+
+
+		<script type="text/javascript" src="/assets/lib/socket.io-client/dist/socket.io.js"></script>
+		<script type="text/javascript" src="/assets/lib/angular/angular.js"></script>
+		<script type="text/javascript" src="/assets/lib/angular-ui-router/release/angular-ui-router.js"></script>
+		<script type="text/javascript" src="/assets/lib/angular-resource/angular-resource.js"></script>
+
+		<script type="text/javascript" src="/app/app.module.js"></script>
+		<script type="text/javascript" src="/app/config/config.routes.js"></script>
+		<script type="text/javascript" src="/app/controllers/app.ctrl1.js"></script>
+		<script type="text/javascript" src="/app/controllers/profil.ctrl.js"></script>
+		<script type="text/javascript" src="/app/services/currency.service.js"></script>
+
+		<script type="text/javascript" src="/app/services/eleves.service.js"></script>
+
+
+	</body>
+
+
+</html>

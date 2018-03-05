@@ -1,0 +1,25 @@
+{
+  "name": "mean1",
+  "description": "",
+  "main": "app_client.js",
+  "authors": [
+    "Leo Casagrande <leo@greenberry.io>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "client/static/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.6.9",
+    "angular-ui-router": "^1.0.15",
+    "socket.io": "^2.0.4",
+    "socket.io-client": "^2.0.4",
+    "angular-resource": "^1.6.9"
+  }
+}
