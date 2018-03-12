@@ -51,6 +51,16 @@ app.get('/api/liste', function(req, res) {
         }
     });
 });
+app.put('/api/liste/:id', function(req, res) {
+   Eleve.findOneAndUpdate({
+        _id: req.params.id
+    }, req.body, { new: true }, function(err, objedite) {
+        if (err) return handleError(err);
+        console.log('The objedite response from Mongo was ', objedite);
+        io.emit("updateUser", objedite);
+        return res.json(objedite);
+    });
+});
 app.get('/api/liste/:id', function(req, res) {
     Eleve.findOne({_id : req.params.id}, function(err, docs) {
         if (err) {
@@ -61,6 +71,16 @@ app.get('/api/liste/:id', function(req, res) {
             return res.json(docs);
 
         }
+    });
+});
+app.delete('/api/liste/:id', function(req, res) {
+    Eleve.findByIdAndRemove(req.params.id, (err, todo) => {
+        var response = {
+            message: "User successfully deleted",
+            id: todo._id
+        };
+        io.emit("deleteUser", response);
+        res.status(200).send(response);
     });
 });
 app.route('/:url(api|auth|components|app|bower_components|assets)/*')

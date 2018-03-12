@@ -1,24 +1,26 @@
 <!-- <h2>Je suis home</h2>
 <div ng-init="truc=true">
-	
-	<p class="red" id="valueP"></p>
-	<input type="text" name="nom" ng-model="variable.nom">
-	<input type="text" name="prenom" ng-model="variable.prenom">
-	<button id="foo" ng-click="truc = !truc">click</button>
-	<p>bonjour {{variable}}</p>
-	<p>nom : {{variable.nom}}</p>
-	<p>prenom : {{variable.prenom}}</p>
-	{{truc}}
-	
-	<p ng-if="truc">truc est true</p>
-	<p ng-if="!truc">truc est false</p>
+		
+		<p class="red" id="valueP"></p>
+		<input type="text" name="nom" ng-model="variable.nom">
+		<input type="text" name="prenom" ng-model="variable.prenom">
+		<button id="foo" ng-click="truc = !truc">click</button>
+		<p>bonjour {{variable}}</p>
+		<p>nom : {{variable.nom}}</p>
+		<p>prenom : {{variable.prenom}}</p>
+		{{truc}}
+		
+		<p ng-if="truc">truc est true</p>
+		<p ng-if="!truc">truc est false</p>
 </div>
 	{{ date | date:"dd-MM-yyyy"}}
-
 <div ng-include="'/app/templates/partials/liste.html'"></div> -->
-
 <h3>Liste des élèves : </h3>
-	
+<button ui-sref="add" class="btn">add +</button>
 <ul>
-	<li ui-sref="profil({id: el._id})" ng-repeat="el in maliste">{{el.Nom}} - {{el.Prenom}}</li>
+	<li ng-repeat="el in maliste" ng-if="el.Nom"><span ui-sref="profil({id: el._id})" >
+		
+		{{el.Nom}} - {{el.Prenom}}&nbsp;
+	</span>
+	<span ui-sref="edit({id: el._id})" >Edit</span><span ng-click="deleteEleve(el)">&nbsp;Del</span></li>
 </ul>
